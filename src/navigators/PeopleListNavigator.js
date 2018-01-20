@@ -4,6 +4,8 @@ import { request } from 'graphql-request';
 
 import PeopleList from '../components/PeopleList';
 
+import StarWarsQueryRenderer from '../components/StarWars';
+
 const urlGraphServer = 'https://graphql-sw-api-gxmdjgcfhi.now.sh';
 
 export default class PeopleListNavigator extends PureComponent {
@@ -82,12 +84,6 @@ export default class PeopleListNavigator extends PureComponent {
                                 </View>
 
   render() {
-    if (this.state.dataSource.length === 0) {
-      return this.renderEmptyList();
-    }
-    if (this.state.isFetching) {
-      return this.renderListFetchingData();
-    }
-    return this.renderListNotFetching();
+    return <StarWarsQueryRenderer />;
   }
 }
